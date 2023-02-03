@@ -1,0 +1,13 @@
+.name {
+  display: flex;
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

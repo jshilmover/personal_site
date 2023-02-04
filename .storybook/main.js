@@ -6,6 +6,7 @@ const config = {
     "@storybook/addon-interactions",
     "@storybook/addon-actions",
   ],
+  staticDirs: ["../public"],
   framework: {
     name: "@storybook/nextjs",
     options: {},

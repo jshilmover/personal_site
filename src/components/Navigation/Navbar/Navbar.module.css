@@ -1,0 +1,15 @@
+.navbarContainer {
+  color: var(--color-light);
+}
+
+.navItem {
+  color: var(--color-light);
+}
+
+.navItem:hover {
+  color: var(--color-med-2) !important;
+}
+
+.navItemDisabled {
+  color: var(--color-med-2);
+}

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Form, Button } from "react-bootstrap";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 import styles from "@/styles/Contact.module.css";
 
@@ -8,7 +8,7 @@ export default function Home() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const sendEmail = async (e: React.FormEvent) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const target = e.target as typeof e.target & {
@@ -23,7 +23,9 @@ export default function Home() {
     const subject = target.formBasicSubject.value;
     const message = target.formBasicBody.value;
 
-    const valid = e.currentTarget.checkValidity();
+    const form = e.currentTarget;
+
+    const valid = form.checkValidity();
 
     if (valid) {
       const res = await fetch("/api/sendgrid", {
@@ -57,7 +59,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.formContainer}>
-          <Form onSubmit={(e) => sendEmail(e)}>
+          <Form onSubmit={(e) => sendEmail(e)} validated>
             <Form.Group className="mb-3" controlId="formFullName">
               <Form.Label>Full Name</Form.Label>
               <Form.Control

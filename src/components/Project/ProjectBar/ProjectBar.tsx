@@ -47,7 +47,7 @@ export const ProjectBar = ({ project }: ProjectBarProps) => {
         <Collapse in={showExpandedBar}>
           <div>
             <div className={styles.image} onClick={() => setLightBoxOpen(true)}>
-              <Image src={project.images[0].src} alt="" fill />
+              <img src={project.images[0].src} alt="" />
             </div>
             <div className={styles.expandedInfo}>
               <div className={styles.description}>

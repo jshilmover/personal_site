@@ -1,7 +1,10 @@
 import React from "react";
-import { Container, Nav, Navbar as BootstrapNavbar } from "react-bootstrap";
+import { Nav, Navbar as BootstrapNavbar } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import classNames from "classnames";
+
+import styles from "./Navbar.module.css";
 
 type NavProps = {
   navItems: {
@@ -14,17 +17,23 @@ export const Navbar = ({ navItems }: NavProps) => {
   const { pathname } = useRouter();
 
   return (
-    <BootstrapNavbar expand>
-      <Nav variant="tabs">
+    <BootstrapNavbar expand className={styles.navbarContainer}>
+      <Nav>
         {navItems.map((item, i) => (
           <Nav.Item key={i}>
             <Nav.Link
               as={Link}
               href={item.linkTo}
-              className="px-4"
               disabled={pathname == item.linkTo}
             >
-              {item.display}
+              <span
+                className={classNames(
+                  styles.navItem,
+                  pathname == item.linkTo ? styles.navItemDisabled : "",
+                )}
+              >
+                {item.display}
+              </span>
             </Nav.Link>
           </Nav.Item>
         ))}

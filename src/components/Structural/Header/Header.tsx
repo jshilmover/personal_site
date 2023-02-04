@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navigation/Navbar";
+import Footer from "@/components/Navigation/Footer";
 import classNames from "classnames";
 
 import styles from "./Header.module.css";
@@ -19,10 +20,6 @@ export const Header = ({ children }: Props) => {
       linkTo: "/",
     },
     {
-      display: "Education",
-      linkTo: "/education",
-    },
-    {
       display: "Projects & Experience",
       linkTo: "/experience",
     },
@@ -34,13 +31,18 @@ export const Header = ({ children }: Props) => {
 
   return (
     <>
-      <div className={styles.headerContainer}>
-        <span className={classNames(styles.name, frankRuhlLibre.className)}>
-          Jory Shilmover
-        </span>
-        <Navbar navItems={navItems} />
+      <div className={styles.pageContent}>
+        <div className={styles.headerContainer}>
+          <span className={classNames(styles.name, frankRuhlLibre.className)}>
+            Jory Shilmover
+          </span>
+          <Navbar navItems={navItems} />
+        </div>
+        <div className={styles.children}>{children}</div>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </div>
-      <div>{children}</div>
     </>
   );
 };

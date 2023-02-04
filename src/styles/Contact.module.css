@@ -1,0 +1,19 @@
+.formContainer {
+  margin: auto;
+  width: 50%;
+}
+
+.textArea {
+  height: 200px;
+  resize: none;
+}
+
+.success {
+  margin-top: 0.5em;
+  color: green;
+}
+
+.error {
+  margin-top: 0.5em;
+  color: red;
+}

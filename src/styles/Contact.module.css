@@ -1,6 +1,12 @@
 .formContainer {
   margin: auto;
-  width: 50%;
+  width: 90%;
+}
+
+@media screen and (min-width: 720px) {
+  .formContainer {
+    width: 50%;
+  }
 }
 
 .textArea {

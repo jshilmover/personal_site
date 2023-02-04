@@ -1,0 +1,50 @@
+.projectBarContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  border: 1px solid var(--color-med-2);
+  border-radius: 0.5em;
+  padding: 1rem;
+}
+
+.projectInfoContainer {
+  align-items: center;
+  cursor: pointer;
+}
+
+.projectTitle {
+  font-weight: bold;
+}
+
+.expandButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.image {
+  position: relative;
+  flex: 0.5;
+  height: 150px;
+  margin-right: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.image:hover {
+  border: 2px solid var(--color-dark);
+}
+
+.image > img {
+  object-fit: contain;
+}
+
+.expandedInfo {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.description {
+  flex: 1.5;
+}

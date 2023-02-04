@@ -1,5 +1,9 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+import ProjectBar from "@/components/Project/ProjectBar";
+
+import projects from "./projects.json";
+import styles from "@/styles/Experience.module.css";
+import classNames from "classnames";
 
 export default function Home() {
   return (
@@ -10,7 +14,48 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>Projects and experience</main>
+      <main className={styles.main}>
+        <div className="container">
+          <div className={styles.title}>Projects</div>
+          <section>
+            {projects.map((project, i) => (
+              <div key={i} className={styles.projectBarSpacing}>
+                <ProjectBar project={project} />
+              </div>
+            ))}
+          </section>
+          <hr />
+          <div className={styles.title}>Experience</div>
+          <div className="row">
+            <div className={classNames("col-sm-4")}>
+              <div className={styles.subTitle}>Frontend</div>
+              <ul>
+                <li>HTML, JavaScript, TypeScript, CSS</li>
+                <li>React</li>
+                <li>Angular</li>
+                <li>NextJS</li>
+              </ul>
+            </div>
+            <div className={classNames("col-sm-4")}>
+              <div className={styles.subTitle}>Backend</div>
+              <ul>
+                <li>Express</li>
+                <li>Laravel</li>
+                <li>ASP.NET</li>
+              </ul>
+            </div>
+            <div className={classNames("col-sm-4")}>
+              <div className={styles.subTitle}>Software</div>
+              <ul>
+                <li>Swift</li>
+                <li>SwiftUI</li>
+                <li>Storyboard</li>
+                <li>Kotlin</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
     </>
   );
 }

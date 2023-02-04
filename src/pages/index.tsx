@@ -14,7 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.sideBySide}>
           <div className={styles.selfImage}>
-            <Image src="/headshot.jpg" fill alt="" />
+            <Image src="/images/headshot.jpg" fill alt="" />
           </div>
           <section className={styles.aboutMe}>
             <p>

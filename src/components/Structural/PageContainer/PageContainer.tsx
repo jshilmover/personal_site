@@ -3,7 +3,7 @@ import Navbar from "@/components/Navigation/Navbar";
 import Footer from "@/components/Navigation/Footer";
 import classNames from "classnames";
 
-import styles from "./Header.module.css";
+import styles from "./PageContainer.module.css";
 
 import { Frank_Ruhl_Libre } from "@next/font/google";
 
@@ -13,7 +13,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const Header = ({ children }: Props) => {
+export const PageContainer = ({ children }: Props) => {
   const navItems = [
     {
       display: "Home",

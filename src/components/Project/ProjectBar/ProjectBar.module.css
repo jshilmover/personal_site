@@ -1,11 +1,21 @@
 .projectBarContainer {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 90%;
   margin: auto;
   border: 1px solid var(--color-med-2);
   border-radius: 0.5em;
   padding: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .projectBarContainer {
+    width: 60%;
+  }
+
+  .image {
+    height: 300px;
+  }
 }
 
 .projectInfoContainer {
@@ -26,14 +36,9 @@
 .image {
   position: relative;
   flex: 0.5;
-  height: 150px;
+  height: 200px;
   margin-right: 1rem;
   cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.image:hover {
-  border: 2px solid var(--color-dark);
 }
 
 .image > img {

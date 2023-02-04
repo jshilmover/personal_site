@@ -40,6 +40,7 @@ export const ProjectBar = ({ project }: ProjectBarProps) => {
               width={15}
               height={15}
               alt=""
+              priority
             />
           </span>
         </div>

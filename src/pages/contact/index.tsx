@@ -1,7 +1,52 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+import { Form, Button } from "react-bootstrap";
+import { useState } from "react";
+
+import styles from "@/styles/Contact.module.css";
 
 export default function Home() {
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const target = e.target as typeof e.target & {
+      formBasicEmail: { value: string };
+      formBasicBody: { value: string };
+      formFullName: { value: string };
+      formBasicSubject: { value: string };
+    };
+
+    const name = target.formFullName.value;
+    const email = target.formBasicEmail.value;
+    const subject = target.formBasicSubject.value;
+    const message = target.formBasicBody.value;
+
+    const valid = e.currentTarget.checkValidity();
+
+    if (valid) {
+      const res = await fetch("/api/sendgrid", {
+        body: JSON.stringify({
+          email: email,
+          fullname: name,
+          subject: subject,
+          message: message,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+
+      const { error } = await res.json();
+      if (error) {
+        console.log(error);
+        setError(true);
+        return;
+      } else setSuccess(true);
+    }
+  };
   return (
     <>
       <Head>
@@ -10,7 +55,55 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>Contact</main>
+      <main className={styles.main}>
+        <div className={styles.formContainer}>
+          <Form onSubmit={(e) => sendEmail(e)}>
+            <Form.Group className="mb-3" controlId="formFullName">
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your name"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" required />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicSubject">
+              <Form.Label>Subject</Form.Label>
+              <Form.Control type="text" placeholder="Enter subject" required />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicBody">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                as="textarea"
+                type="text"
+                placeholder="Message"
+                className={styles.textArea}
+                required
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" disabled={success || error}>
+              Submit
+            </Button>
+            {success && (
+              <div className={styles.success}>
+                Thanks, your email has been sent!
+              </div>
+            )}
+            {error && (
+              <div className={styles.error}>
+                There was an issue processing your request. Please try again
+                later
+              </div>
+            )}
+          </Form>
+        </div>
+      </main>
     </>
   );
 }

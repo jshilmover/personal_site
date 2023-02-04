@@ -1,0 +1,17 @@
+[
+  {
+    "titleAndShortDesc": "Dreamstream - Fully featured social media platform",
+    "images": [
+      {
+        "src": "/images/dreamstream.png"
+      },
+      {
+        "src": "/images/dreamstream2.png"
+      },
+      {
+        "src": "/images/dreamstream3.png"
+      }
+    ],
+    "fullDescription": "Dreamstream is a fully featured social media platform developed for use as an internal replacement for Workplace at World Wide Group using React, node, Express, and SQL Server. It supports auth, notifications, creating posts, editing posts, sharing posts, uploading images/videos, leaving comments, and adding reactions to posts and comments. I primarily worked on the front end UI with a minor focus on the backend server."
+  }
+]

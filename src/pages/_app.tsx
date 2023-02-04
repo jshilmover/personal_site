@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
-import Header from "@/components/Structural/Header";
+import PageContainer from "@/components/Structural/PageContainer";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -12,8 +12,8 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <Header>
+    <PageContainer>
       <Component {...pageProps} />
-    </Header>
+    </PageContainer>
   );
 }

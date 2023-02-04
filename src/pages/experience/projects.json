@@ -1,0 +1,50 @@
+[
+  {
+    "titleAndShortDesc": "BidPro TripBoard - iOS and web tool for pilots",
+    "images": [
+      {
+        "src": "/images/tripboardweb.png"
+      },
+      {
+        "src": "/images/tripboardipad.PNG"
+      }
+    ],
+    "fullDescription": "BidPro TripBoard is a multiplatform application designed to allow pilots to view their schedules and trade various schedule aspects with other pilots. The iPad app is designed using Storybook and Swift, while the web version and backend are built using Angular and a .NET stack. I'm in charge of maintaining the entire stack for this project."
+  },
+  {
+    "titleAndShortDesc": "BidPro Bidder - iOS and web tool for pilots",
+    "images": [
+      {
+        "src": "/images/bidderipad.PNG"
+      },
+      {
+        "src": "/images/bidderipad2.PNG"
+      },
+      {
+        "src": "/images/bidderipad3.PNG"
+      },
+      {
+        "src": "/images/bidderipad4.PNG"
+      },
+      {
+        "src": "/images/bidderweb.png"
+      }
+    ],
+    "fullDescription": "BidPro Bidder is a multiplatform application designed to allow pilots to bid on their schedules. The iPad app is designed using Storybook and Swift, while the web version and backend are built using Angular and a .NET stack. I'm in charge of maintaining the entire stack for this project."
+  },
+  {
+    "titleAndShortDesc": "Dreamstream - Fully featured social media platform",
+    "images": [
+      {
+        "src": "/images/dreamstream.png"
+      },
+      {
+        "src": "/images/dreamstream2.png"
+      },
+      {
+        "src": "/images/dreamstream3.png"
+      }
+    ],
+    "fullDescription": "Dreamstream is a fully featured social media platform developed for use as an internal replacement for Workplace at World Wide Group using React, node, Express, and SQL Server. It supports auth, notifications, creating posts, editing posts, sharing posts, uploading images/videos, leaving comments, and adding reactions to posts and comments. I primarily worked on the front end UI with a minor focus on the backend server."
+  }
+]

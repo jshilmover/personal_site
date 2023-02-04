@@ -1,0 +1,15 @@
+.projectBarSpacing {
+  margin-bottom: 1em;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 0.5em;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+  text-align: center;
+}

@@ -59,7 +59,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.formContainer}>
-          <Form onSubmit={(e) => sendEmail(e)} validated>
+          <Form onSubmit={(e) => sendEmail(e)}>
             <Form.Group className="mb-3" controlId="formFullName">
               <Form.Label>Full Name</Form.Label>
               <Form.Control

@@ -27,10 +27,10 @@ export const ProjectBar = ({ project }: ProjectBarProps) => {
           className={classNames(styles.projectInfoContainer, "row")}
           onClick={() => setShowExpandedBar(!showExpandedBar)}
         >
-          <span className={classNames(styles.projectTitle, "col-sm-11")}>
+          <span className={classNames(styles.projectTitle, "col-10")}>
             {project.titleAndShortDesc}
           </span>
-          <span className={classNames(styles.expandButton, "col-sm-1")}>
+          <span className={classNames(styles.expandButton, "col-2")}>
             <Image
               src={
                 showExpandedBar
@@ -45,11 +45,15 @@ export const ProjectBar = ({ project }: ProjectBarProps) => {
           </span>
         </div>
         <Collapse in={showExpandedBar}>
-          <div className={styles.expandedInfo}>
+          <div>
             <div className={styles.image} onClick={() => setLightBoxOpen(true)}>
               <Image src={project.images[0].src} alt="" fill />
             </div>
-            <div className={styles.description}>{project.fullDescription}</div>
+            <div className={styles.expandedInfo}>
+              <div className={styles.description}>
+                {project.fullDescription}
+              </div>
+            </div>
           </div>
         </Collapse>
       </div>

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
+import classNames from "classnames";
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.sideBySide}>
-          <div className={styles.selfImage}>
+        <div className="row">
+          <div className={classNames(styles.selfImage, "col-sm-12 col-md-6")}>
             <Image src="/images/headshot.jpg" fill alt="" />
           </div>
           <section className={styles.aboutMe}>
@@ -39,8 +40,8 @@ export default function Home() {
           </section>
         </div>
         <hr />
-        <div className={styles.sideBySide}>
-          <div className={styles.halfColumn}>
+        <div className="row">
+          <div className="col-sm-12 col-md-6 mb-1 mb-0-md">
             <div className={styles.title}>Education</div>
             <section className={styles.bodyText}>
               <div>Associate in Applied Science - Software Development</div>
@@ -49,7 +50,7 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <div className={styles.halfColumn}>
+          <div className="col-sm-12 col-md-6">
             <div className={styles.title}>Certificates</div>
             <section className={styles.bodyText}>
               <div>Certificate - Computer Science</div>

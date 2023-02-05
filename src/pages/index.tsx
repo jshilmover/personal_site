@@ -15,7 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className="row">
           <div className={classNames(styles.selfImage, "col-sm-12 col-md-6")}>
-            <img src="/images/headshot.jpg" alt="" />
+            <img src="https://via.placeholder.com/300x400.png" alt="" />
           </div>
           <section className={styles.aboutMe}>
             <p>
